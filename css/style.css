@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 1rem;
+    border-bottom: 1px solid rgba(155, 155, 155, 0.595);
+}
+
+nav .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+nav .title span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-inline: 12px;
+    text-transform: uppercase;
+}
+
+nav .title img {
+    height: 50px;
+}
+
+svg {
+    cursor: pointer;
+    opacity: .5;
+    transition: all 1s;
+}
+
+svg:hover {
+    opacity: 1;
+    transform: rotate(280deg);
+}
+
+#light-mood {
+    display: none;
+    filter: invert(1);
+}
