@@ -1,3 +1,8 @@
+
+// ======================================================================
+// ---------------------------- Theme Toggle ----------------------------
+// ======================================================================
+
 const dark_btn = document.getElementById('dark-mood');
 const light_btn = document.getElementById('light-mood');
 
@@ -20,3 +25,8 @@ function lightTheme() {
     document.body.style.backgroundColor = "white"
     document.body.style.color = "black"
 }
+
+
+// ======================================================================
+
+// ======================================================================
