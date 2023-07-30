@@ -17,11 +17,12 @@ nav .title {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
 }
 
 nav .title span {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 1.5vw, 2rem);
     font-weight: 700;
     padding-inline: 12px;
     text-transform: uppercase;
@@ -30,6 +31,24 @@ nav .title span {
 nav .title img {
     height: 50px;
 }
+
+
+nav .title::before {
+    content: "";
+    position: absolute;
+    width: 0rem;
+    height: 2px;
+    background-color: rgb(100, 100, 100);
+    left: 45px;
+    bottom: 5px;
+    transition: 1s;
+}
+
+nav .title:hover:before {
+    width: 9rem;
+}
+
+
 
 svg {
     cursor: pointer;
