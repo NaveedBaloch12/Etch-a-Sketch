@@ -42,7 +42,7 @@ nav .title::before {
     position: absolute;
     width: 0rem;
     height: 2px;
-    background-color: rgb(100, 100, 100);
+    background-color: #646464;
     left: 45px;
     bottom: 5px;
     transition: 1s;
@@ -74,3 +74,8 @@ svg:hover {
 /* ======================================================= */
 /* ------------------------  ----------------------- */
 /* ======================================================= */
+
+
+.tools-container{
+    display: flex;
+}
