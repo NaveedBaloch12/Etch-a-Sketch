@@ -49,7 +49,7 @@ nav .title::before {
     position: absolute;
     width: 0rem;
     height: 2px;
-    background-color: #646464;
+    background-color:var(--bg_gray_semi_TP_color);
     left: 45px;
     bottom: 5px;
     transition: 1s;
@@ -60,13 +60,13 @@ nav .title:hover:before {
 }
 
 
-svg {
+nav svg {
     cursor: pointer;
     opacity: .5;
     transition: all 1s;
 }
 
-svg:hover {
+nav svg:hover {
     opacity: 1;
     transform: rotate(280deg);
 }
@@ -87,9 +87,29 @@ svg:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--mobile_box_padding);
+    padding: 0px 12px;
     background-color: var(--bg_gray_semi_TP_color);
     border-bottom:1px solid var(--border_gray_semi_TP_color);
+}
+
+.tool{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px 1rem;
+    align-items: center;
+}
+
+.tool svg {
+    margin: 0px 4px;
+}
+
+.tool span{
+    display: none;
+}
+
+.active-tool{
+    background-color: rgba(104, 104, 104, 0.529);
 }
 
 #select-color {
@@ -115,6 +135,17 @@ svg:hover {
     width: 100%;
 }
 
-.set-artboard-size input::-webkit-keygen-select{
-    color: red;
+
+
+
+
+
+
+
+
+@media (min-width: 430px) {
+    .tool span{
+        display: block;
+    }
+    
 }
