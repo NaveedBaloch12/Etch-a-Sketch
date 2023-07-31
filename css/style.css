@@ -5,6 +5,12 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+:root{
+    --bg_gray_semi_TP_color:  rgba(151, 151, 151, 0.338);
+    --border_gray_semi_TP_color: rgba(123, 123, 123, 0.595);
+    --mobile_box_padding: 12px 1rem;
+}
+
 /* ======================================================= */
 /* ------------------------ NavBar ----------------------- */
 /* ======================================================= */
@@ -13,8 +19,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 1rem;
-    border-bottom: 1px solid rgba(155, 155, 155, 0.595);
+    padding:var(--mobile_box_padding);
+    background-color:var(--bg_gray_semi_TP_color);
+    border-bottom: 1px solid var(--border_gray_semi_TP_color);
 }
 
 nav .title {
@@ -72,10 +79,42 @@ svg:hover {
 
 
 /* ======================================================= */
-/* ------------------------  ----------------------- */
+/* ----------------- ArtBoard Section -------------------- */
 /* ======================================================= */
 
 
 .tools-container{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--mobile_box_padding);
+    background-color: var(--bg_gray_semi_TP_color);
+    border-bottom:1px solid var(--border_gray_semi_TP_color);
+}
+
+#select-color {
+    overflow: hidden;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+#select-color::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.set-artboard-size {
+    padding: var(--mobile_box_padding);
+    background-color: var(--bg_gray_semi_TP_color);
+    border-bottom:1px solid var(--border_gray_semi_TP_color);
+    border-radius: 0px 0px 20px 20px;
+    
+}
+
+.set-artboard-size input{
+    width: 100%;
+}
+
+.set-artboard-size input::-webkit-keygen-select{
+    color: red;
 }
