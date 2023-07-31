@@ -15,17 +15,59 @@ function darkTheme() {
 
     document.body.style.backgroundColor = "black"
     document.body.style.color = "white"
-    
+
 }
 
 function lightTheme() {
     light_btn.style.display = "none"
     dark_btn.style.display = "block"
-    
+
     document.body.style.backgroundColor = "white"
     document.body.style.color = "black"
 }
 
 // ======================================================================
+// ------------------- Active tool Class toggle -------------------------
+// ======================================================================
+
+// grab ratio input from HTML
+const penBtn = document.getElementById('penBtn');
+const randomBtn = document.getElementById('randomBtn');
+const eraserBtn = document.getElementById('eraserBtn');
+
+// Click Event Listening
+penBtn.addEventListener('click', penFunction);
+randomBtn.addEventListener('click', randomFunction);
+eraserBtn.addEventListener('click', eraserFunction);
+
+// get color code from color picker 
+document.getElementById("select-color").addEventListener('change', (e) => {
+    var selectedColor = e.target.value;
+})
+
+function penFunction() {
+    console.log("Pen function");
+
+}
+
+function randomFunction() {
+    console.log("Random function");
+}
+
+function eraserFunction() {
+    console.log("eraser function");
+}
+
 
 // ======================================================================
+// ------------------------ artBoard ------------------------------------
+// ======================================================================
+
+const artBoard = document.querySelector('#artBoard');
+for (var i = 1; i <= 4; i++) {
+const content = document.createElement('div');
+content.classList.add('content');
+content.textContent = i;
+
+artBoard.appendChild(content);
+}

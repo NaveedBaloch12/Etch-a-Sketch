@@ -5,8 +5,9 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-:root{
-    --bg_gray_semi_TP_color:  rgba(151, 151, 151, 0.338);
+:root {
+    --bg_gray_semi_TP_color: rgba(151, 151, 151, 0.338);
+    --checked_gray_semi_TP_color: rgba(147, 147, 147, 0.54);
     --border_gray_semi_TP_color: rgba(123, 123, 123, 0.595);
     --mobile_box_padding: 12px 1rem;
 }
@@ -19,8 +20,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:var(--mobile_box_padding);
-    background-color:var(--bg_gray_semi_TP_color);
+    padding: var(--mobile_box_padding);
+    background-color: var(--bg_gray_semi_TP_color);
     border-bottom: 1px solid var(--border_gray_semi_TP_color);
 }
 
@@ -49,7 +50,7 @@ nav .title::before {
     position: absolute;
     width: 0rem;
     height: 2px;
-    background-color:var(--bg_gray_semi_TP_color);
+    background-color: var(--bg_gray_semi_TP_color);
     left: 45px;
     bottom: 5px;
     transition: 1s;
@@ -78,74 +79,105 @@ nav svg:hover {
 
 
 
-/* ======================================================= */
-/* ----------------- ArtBoard Section -------------------- */
+/* ============0=========================================== */
+/* ----------- ArtBoard Section Utalities ----------------- */
 /* ======================================================= */
 
 
-.tools-container{
+.tools-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 12px;
     background-color: var(--bg_gray_semi_TP_color);
-    border-bottom:1px solid var(--border_gray_semi_TP_color);
+    border-bottom: 1px solid var(--border_gray_semi_TP_color);
 }
 
-.tool{
+input[type="radio"] {
+    display: none;
+
+    &:not(:disabled)~label {
+        cursor: pointer;
+    }
+}
+
+.tools-container input[type="radio"]:checked + label{
+    background-color:var(--checked_gray_semi_TP_color) ;
+}
+
+.tools-container label{
     display: flex;
     justify-content: center;
-    cursor: pointer;
-    padding: 5px 1rem;
     align-items: center;
+    padding: var(--mobile_box_padding);
 }
 
-.tool svg {
-    margin: 0px 4px;
+.tools-container label svg {
+    margin: 0px 6px;
 }
 
-.tool span{
+.tools-container label span {
     display: none;
-}
-
-.active-tool{
-    background-color: rgba(104, 104, 104, 0.529);
 }
 
 #select-color {
     overflow: hidden;
+    margin: 0px 6px;
     border-radius: 50%;
     height: 25px;
     width: 25px;
     cursor: pointer;
 }
+
 #select-color::-webkit-color-swatch-wrapper {
     padding: 0;
 }
 
-.set-artboard-size {
+.set-artBoard-size {
     padding: var(--mobile_box_padding);
     background-color: var(--bg_gray_semi_TP_color);
-    border-bottom:1px solid var(--border_gray_semi_TP_color);
+    border-bottom: 1px solid var(--border_gray_semi_TP_color);
     border-radius: 0px 0px 20px 20px;
-    
+
 }
 
-.set-artboard-size input{
+.set-artBoard-size input {
     width: 100%;
 }
 
+/* ============0=========================================== */
+/* ------------------ ArtBoard Section -------------------- */
+/* ======================================================= */
+
+.artBoard-section{
+    border-radius: 20px;
+    margin: 2rem 0px;
+    padding: 1rem;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: var(--bg_gray_semi_TP_color);
+}
+
+#artBoard{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 
 
 
 
 
+/* ============0=========================================== */
+/* ---------------- Different Screens -------------------- */
+/* ======================================================= */
 
-
-@media (min-width: 430px) {
-    .tool span{
+@media (min-width: 400px) {
+    .tools-container label span {
         display: block;
     }
-    
+
 }
