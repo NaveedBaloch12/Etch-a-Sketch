@@ -101,11 +101,11 @@ input[type="radio"] {
     }
 }
 
-.tools-container input[type="radio"]:checked + label{
-    background-color:var(--checked_gray_semi_TP_color) ;
+.tools-container input[type="radio"]:checked+label {
+    background-color: var(--checked_gray_semi_TP_color);
 }
 
-.tools-container label{
+.tools-container label {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,7 +148,7 @@ input[type="radio"] {
 /* ------------------ ArtBoard Section -------------------- */
 /* ======================================================= */
 
-.artBoard-section{
+.artBoard-section {
     border-radius: 20px;
     margin: 2rem 0px;
     padding: 1rem;
@@ -162,12 +162,12 @@ input[type="radio"] {
     width: 100%;
     height: 100%;
     background-color: white;
-  }
+}
 
-  .content {
+.content {
     background-color: white;
-  }
-  
+}
+
 
 
 
@@ -184,7 +184,25 @@ input[type="radio"] {
 
 
 @media (min-width: 1000px) {
-    .tools-container label span {
-        display: block;
+    .main-section {
+        display: flex;
+        justify-content: center;
     }
+
+    .tools-container {
+        margin: 2rem 1rem 0rem 1rem;
+        border-radius: 20px 20px 0px 0px;
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .set-artBoard-size {
+        margin: 0rem 1rem 1rem 1rem;
+    }
+
+    .artBoard-section {
+        width: 40rem;
+    }
+
+    .tools-container label {}
 }
