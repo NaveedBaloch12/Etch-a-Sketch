@@ -138,7 +138,6 @@ input[type="radio"] {
     background-color: var(--bg_gray_semi_TP_color);
     border-bottom: 1px solid var(--border_gray_semi_TP_color);
     border-radius: 0px 0px 20px 20px;
-
 }
 
 .set-artBoard-size input {
@@ -169,8 +168,6 @@ input[type="radio"] {
     background-color: white;
   }
   
-
-
 
 
 
