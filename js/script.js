@@ -62,22 +62,23 @@ function addDiv(numberOfDiv) {
 
         div.classList.add('content');
 
+        var isDragging
         div.addEventListener('mousedown', () => {
             isDragging = true;
-            div.style.backgroundColor = selectedColor;
+            div.style.backgroundColor = colorFunction();
         });
         div.addEventListener('mouseup', () => {
             isDragging = false;
         });
         div.addEventListener('mousemove', () => {
             if (isDragging) {
-                div.style.backgroundColor = selectedColor;
+                div.style.backgroundColor = colorFunction();
             }
         });
 
         div.addEventListener('touchstart', () => {
             isDragging = true;
-            div.style.backgroundColor = selectedColor;
+            div.style.backgroundColor = colorFunction();
         });
 
         div.addEventListener('touchend', () => {
@@ -90,7 +91,7 @@ function addDiv(numberOfDiv) {
                 const touch = event.touches[0];
                 const touchTarget = document.elementFromPoint(touch.clientX, touch.clientY);
                 if (touchTarget === div) {
-                    div.style.backgroundColor = selectedColor;
+                    div.style.backgroundColor = colorFunction();
                 }
             }
         });
@@ -113,25 +114,38 @@ const penBtn = document.getElementById('penBtn');
 const randomBtn = document.getElementById('randomBtn');
 const eraserBtn = document.getElementById('eraserBtn');
 
-// Click Event Listening
-penBtn.addEventListener('click', penFunction);
-randomBtn.addEventListener('click', randomFunction);
-eraserBtn.addEventListener('click', eraserFunction);
+// Add event listeners to the radio buttons
+penBtn.addEventListener('change', colorFunction);
+randomBtn.addEventListener('change', colorFunction);
+eraserBtn.addEventListener('change', colorFunction);
 
-// get color code from color picker 
-var selectedColor = "#000000"
+const colorPicker = document.getElementById("select-color");
+var color = "#000000", pColor;
+colorPicker.addEventListener('change', (e) => {
+    color = e.target.value;
+    pColor = color
+    colorFunction();
+})
 
-function penFunction() {
-    console.log("Pen function");
-    document.getElementById("select-color").addEventListener('change', (e) => {
-        selectedColor = e.target.value;
-    })
+function random() {
+    return  Math.floor(Math.random() * 256);
 }
 
-function randomFunction() {
 
+// colorFunction();
+function colorFunction() {
+    if (penBtn.checked) {
+        color = pColor;
+    }
+
+    if (randomBtn.checked) {
+        color = `rgb(${random()}, ${random()}, ${random()})`;
+    }
+
+    if (eraserBtn.checked) {
+        color = '#ffffff'
+    }
+    return color
 }
 
-function eraserFunction() {
-}
 

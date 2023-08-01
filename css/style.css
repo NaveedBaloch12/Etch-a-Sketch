@@ -180,5 +180,11 @@ input[type="radio"] {
     .tools-container label span {
         display: block;
     }
+}
 
+
+@media (min-width: 1000px) {
+    .tools-container label span {
+        display: block;
+    }
 }
