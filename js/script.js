@@ -64,19 +64,39 @@ function eraserFunction() {
 // ------------------------ artBoard ------------------------------------
 // ======================================================================
 // get no of div from range 
+document.getElementById("range").addEventListener('change', (e) => {
+    var noDiv = parseInt(e.target.value);
+    var numberOfDiv = 4 ** noDiv;
+    addDiv(numberOfDiv);
+  });
 
-// document.getElementById("range").addEventListener('change', (e) => {
-//     var noDiv = e.target.value;
-//     var numberOfDiv = 4 ** noDiv
-//     addDiv(numberOfDiv);
-// })
+  
+  function addDiv(numberOfDiv) {
+    const artBoard = document.querySelector('#artBoard');
+    artBoard.innerHTML = ''; // Clear existing divs
+  
+    // Calculate the number of rows and columns needed for the grid
+    const cols = Math.sqrt(numberOfDiv);
+    const rows = cols;
+  
+    // Calculate the width and height for each div
+    const containerWidth = artBoard.offsetWidth;
+    const divWidth = containerWidth / cols;
+    const divHeight = containerWidth / rows;
+  
+    // Create the div and add them to the container
+    for (let i = 1; i <= numberOfDiv; i++) {
+      const div = document.createElement('div');
 
-// function addDiv(numberOfDiv){
-// const artBoard = document.querySelector('#artBoard');
-// for (var i = 1; i <= numberOfDiv ; i++) {
-//     const content = document.createElement('span');
-//     content.classList.add('content');
-//     content.textContent = i;
-
-//     artBoard.appendChild(content);
-// }};
+      div.style.width = `${divWidth}px`;
+      div.style.height = `${divHeight}px`;
+      
+      div.classList.add('content');
+      artBoard.appendChild(div);
+    }
+  
+    // Set CSS Grid properties to create the grid layout
+    artBoard.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+    artBoard.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+  }
+  
