@@ -45,6 +45,7 @@ document.getElementById("select-color").addEventListener('change', (e) => {
     var selectedColor = e.target.value;
 })
 
+
 function penFunction() {
     console.log("Pen function");
 
@@ -62,12 +63,20 @@ function eraserFunction() {
 // ======================================================================
 // ------------------------ artBoard ------------------------------------
 // ======================================================================
+// get no of div from range 
 
-const artBoard = document.querySelector('#artBoard');
-for (var i = 1; i <= 4; i++) {
-const content = document.createElement('div');
-content.classList.add('content');
-content.textContent = i;
+// document.getElementById("range").addEventListener('change', (e) => {
+//     var noDiv = e.target.value;
+//     var numberOfDiv = 4 ** noDiv
+//     addDiv(numberOfDiv);
+// })
 
-artBoard.appendChild(content);
-}
+// function addDiv(numberOfDiv){
+// const artBoard = document.querySelector('#artBoard');
+// for (var i = 1; i <= numberOfDiv ; i++) {
+//     const content = document.createElement('span');
+//     content.classList.add('content');
+//     content.textContent = i;
+
+//     artBoard.appendChild(content);
+// }};
